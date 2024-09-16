@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectángulo Neón</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #00FF0000; /* Fondo oscuro para mejorar la visibilidad del efecto */
+        }
+
+        .container {
+            position: relative;
+            width: 98vw; /* Ajusta el tamaño según el dispositivo */
+            height: 98vh; /* Ajusta el tamaño según el dispositivo */
+            background: transparent; /* Fondo transparente */
+            border: 2px solid transparent; /* Define un borde transparente */
+            box-sizing: border-box;
+        }
+
+        .neon-border {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid;
+            border-radius: 8px; /* Opcional: Esquinas redondeadas */
+            box-sizing: border-box;
+            animation: neonAnimation 3s infinite alternate;
+            pointer-events: none; /* No afecta a la interacción del usuario */
+        }
+
+        @keyframes neonAnimation {
+            0% {
+                border-color: #ff004c;
+                box-shadow: 0 0 20px rgba(255, 0, 76, 0.6), 0 0 40px rgba(255, 0, 76, 0.6);
+            }
+            25% {
+                border-color: #00d2ff;
+                box-shadow: 0 0 20px rgba(0, 210, 255, 0.6), 0 0 40px rgba(0, 210, 255, 0.6);
+            }
+            50% {
+                border-color: #00ff00;
+                box-shadow: 0 0 20px rgba(0, 255, 0, 0.6), 0 0 40px rgba(0, 255, 0, 0.6);
+            }
+            75% {
+                border-color: #ffbb00;
+                box-shadow: 0 0 20px rgba(255, 187, 0, 0.6), 0 0 40px rgba(255, 187, 0, 0.6);
+            }
+            100% {
+                border-color: #ff004c;
+                box-shadow: 0 0 20px rgba(255, 0, 76, 0.6), 0 0 40px rgba(255, 0, 76, 0.6);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="neon-border"></div>
+    </div>
+</body>
+</html>
